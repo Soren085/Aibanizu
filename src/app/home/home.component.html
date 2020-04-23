@@ -1,20 +1,11 @@
-<mat-drawer-container class="example-container" autosize>
-  <mat-drawer #drawer class="example-sidenav" mode="side">
-    <img [src]="assets.logo" alt="">
-    <sidebar-button [drawer]="drawer">Toggle</sidebar-button>
-  </mat-drawer>
+<div class="home-container" [ngClass]="class ? 'dark' : 'light'">
+  <top-navigation [isDrawerOpened]="isDrawerOpened"></top-navigation>
 
-  <div class="example-sidenav-content">
-
-    <div class="top-navigation-bar">
-      <sidebar-button [drawer]="drawer">Toggle</sidebar-button>
-      <div class="breadcrumbs">
-
-      </div>
+  <sidebar [drawerInitialState]="drawerInitialState" [isDrawerOpened]="isDrawerOpened">
+    <div class="breadcrumbs">
+  
     </div>
 
     <router-outlet></router-outlet>
-  </div>
-
-</mat-drawer-container>
-
+</sidebar>
+</div>

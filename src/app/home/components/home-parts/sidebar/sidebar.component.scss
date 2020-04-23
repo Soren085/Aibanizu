@@ -1,0 +1,31 @@
+.mat-drawer-container {
+  height: 100%;
+}
+
+
+mat-drawer {
+  transition-duration: 0.5s;
+  transition-timing-function: cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition-property: width;
+}
+
+mat-drawer-content {
+  @extend mat-drawer;
+  transition-property: margin-left;
+}
+
+mat-drawer-content.content-opened {
+  margin-left: 375px !important;
+}
+
+mat-drawer-content.content-closed {
+  margin-left: 60px !important;
+}
+
+mat-drawer.drawer-opened {
+  width: 375px;
+}
+
+mat-drawer.drawer-closed {
+  width: 60px;
+}

@@ -1,16 +1,35 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, ChangeDetectorRef, OnDestroy } from '@angular/core';
+import { DataService } from 'src/app/core/services/data/data.service';
 
 @Component({
   selector: 'sidebar-button',
   templateUrl: './sidebar-button.component.html',
   styleUrls: ['./sidebar-button.component.scss']
 })
-export class SidebarButtonComponent implements OnInit {
-  @Input() drawer;
+export class SidebarButtonComponent implements OnInit, OnDestroy {
+  @Output() openState = new EventEmitter<boolean>();
+  private subscription;
+  private state: boolean;
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+    this.subscription = this.data.currentState.subscribe(
+      (res) => {
+        this.state = res;
+      }
+    );
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscribe();
+  }
+
+  // change state of sidebar
+  public changeState() {
+    this.state = !this.state;
+    this.data.changeState(this.state);
+    this.openState.emit(this.state);
   }
 
 }

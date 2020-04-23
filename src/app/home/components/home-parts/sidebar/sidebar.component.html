@@ -1,0 +1,14 @@
+<mat-drawer-container>
+  
+  <mat-drawer [opened]="drawerInitialState" mode="side" #drawer [ngClass]="drawerState ? 'drawer-opened' : 'drawer-closed'">
+  </mat-drawer>
+
+
+  <mat-drawer-content [ngClass]="drawerState ? 'content-opened' : 'content-closed'">
+
+    <ng-content>
+    </ng-content>
+  
+  </mat-drawer-content>
+
+</mat-drawer-container>  
