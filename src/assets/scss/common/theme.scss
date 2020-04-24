@@ -1,0 +1,36 @@
+// Import library functions for theme creation.
+@import '~@angular/material/theming';
+@import './color-variables.scss';
+
+// Include non-theme styles for core.
+@include mat-core();
+
+
+@mixin base-theme($theme) {
+  // Extract the palettes you need from the theme definition.
+  $primary: map-get($theme, primary);
+  // $background: map-get($theme, background);
+  // $accent: map-get($theme, accent);
+
+  // Define any styles affected by the theme.
+  .menu-toggle-btn {
+    // Use mat-color to extract individual colors from a palette.
+    background-color: mat-color($background, 800) !important;
+  }
+
+  .top-navigation {
+    background: $deep-background;
+  }
+
+  .mat-drawer {
+    background-color: mat-color($background, 800);
+  }
+
+  .mat-drawer-content {
+    background: $deep-background;
+  }
+
+  .home-content {
+    background-color: mat-color($background, 800);
+  }
+}

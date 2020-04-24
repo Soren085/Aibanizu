@@ -1,7 +1,15 @@
+@import 'common/theme.scss';
+
 .home-container {
   height: 100%;
+  box-sizing: border-box;
+
+  .home-content {
+    height: 100%;
+    box-sizing: border-box;
+
+  }
 }
 
-.dark {
-  background-color: black !important;
-}
+
+@include base-theme($dark-theme);

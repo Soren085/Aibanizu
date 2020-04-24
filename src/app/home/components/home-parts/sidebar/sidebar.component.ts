@@ -19,6 +19,7 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.drawerSubscription = this.data.currentState.subscribe(
       (res) => {
         this.drawerState = res;
+        console.log('RES: ', res);
       }
     );
   }

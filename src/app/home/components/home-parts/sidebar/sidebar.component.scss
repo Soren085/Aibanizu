@@ -1,3 +1,8 @@
+@import 'common/theme.scss';
+
+@include base-theme($dark-theme);
+
+
 .mat-drawer-container {
   height: 100%;
 }
@@ -12,6 +17,7 @@ mat-drawer {
 mat-drawer-content {
   @extend mat-drawer;
   transition-property: margin-left;
+  padding: 20px;
 }
 
 mat-drawer-content.content-opened {

@@ -1,0 +1,10 @@
+// Define your application's custom theme.
+$primary: mat-palette($mat-deep-purple);
+// $accent:  mat-palette($mat-pink, A200, A100, A400);
+// $warn: mat-palette($mat-pink, A200, A100, A400);
+// $foreground: mat-palette($mat-pink, A200, A100, A400);
+$background: mat-palette($mat-purple, 800);
+$deep-background: #281935;
+
+//extract theme to material mixin
+$dark-theme: mat-dark-theme($primary, $background, $deep-background);
