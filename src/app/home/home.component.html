@@ -2,13 +2,39 @@
   <top-navigation [isDrawerOpened]="isDrawerOpened"></top-navigation>
 
   <sidebar [drawerInitialState]="drawerInitialState" [isDrawerOpened]="isDrawerOpened">
+    <mat-nav-list>
+      <div class="navigation" *ngFor="let routeItem of routes">
+        <a *ngIf="!routeItem.hasChild; else expansion" mat-list-item class="text link" [routerLink]="routeItem.route">
+          <mat-icon class="icon14" [svgIcon]="routeItem.icon"></mat-icon>
+          {{ routeItem.title }}
+          <mat-divider></mat-divider>
+        </a>  
+        
+        <ng-template #expansion>
 
-    <div class="home-content">
-      <div class="breadcrumbs">
-        asd
+          <mat-expansion-panel mat-list-item>
+            <mat-expansion-panel-header class="navigation-header" [routerLink]="routeItem.route">
+              <mat-panel-title class="text">
+                <mat-icon class="icon14" [svgIcon]="routeItem.icon"></mat-icon>
+                {{ routeItem.title }}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <mat-divider></mat-divider>
+          
+            <div class="navigation" *ngFor="let child of routeItem.children; last as last">
+              <a mat-list-item class="text link" [routerLink]="child.route">
+                {{ child.title }}
+                <mat-divider *ngIf="!last"></mat-divider>
+              </a>
+            </div>
+          </mat-expansion-panel>
+
+          <mat-divider></mat-divider>
+
+        </ng-template>
+
       </div>
-  
-      <router-outlet></router-outlet>  
-    </div>
-</sidebar>
+    </mat-nav-list>
+    
+  </sidebar>
 </div>

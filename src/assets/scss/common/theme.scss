@@ -15,7 +15,7 @@
   // Define any styles affected by the theme.
   .menu-toggle-btn {
     // Use mat-color to extract individual colors from a palette.
-    background-color: mat-color($background, 800) !important;
+    background-color: $base-background !important;
   }
 
   .top-navigation {
@@ -23,7 +23,7 @@
   }
 
   .mat-drawer {
-    background-color: mat-color($background, 800);
+    background-color: $base-background;
   }
 
   .mat-drawer-content {
@@ -31,6 +31,37 @@
   }
 
   .home-content {
-    background-color: mat-color($background, 800);
+    background-color: $base-background;
   }
+
+  .text {
+    color: $primary-white;
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .mat-divider {
+    background-color: $border-color;
+  }
+
+  .mat-expansion-panel {
+    background: transparent;
+    box-shadow: none;
+    color: $primary-white;
+    
+    ::ng-deep .navigation-header > .mat-expansion-indicator::after {
+      border-color: $primary-white !important;
+    }
+
+    ::ng-deep .mat-expansion-panel-body {
+    
+      .mat-list-item-content {
+        // background: mat-color($background, 900) !important;
+        background: rgba( 72, 46, 93, 255 ) !important;
+      }
+    }
+  }
+
 }

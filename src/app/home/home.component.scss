@@ -1,15 +1,9 @@
 @import 'common/theme.scss';
 
+@include base-theme($dark-theme);
+
 .home-container {
   height: 100%;
   box-sizing: border-box;
 
-  .home-content {
-    height: 100%;
-    box-sizing: border-box;
-
-  }
 }
-
-
-@include base-theme($dark-theme);

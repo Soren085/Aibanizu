@@ -3,7 +3,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { HttpClient } from '@angular/common/http';
 import { DataService } from '../core/services/data/data.service';
-import { DrawerState } from '../core/constants/constants';
+import { DrawerState, Navigations } from '../core/constants/constants';
+import { Navigation } from '../core/models/navigation';
 
 @Component({
   selector: 'app-home',
@@ -11,6 +12,7 @@ import { DrawerState } from '../core/constants/constants';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public routes: Navigation[];
   public class = true;
   public assets;
   public drawerInitialState;
@@ -26,12 +28,19 @@ export class HomeComponent implements OnInit {
     this.registSvgIcon();
     this.drawerInitialState = DrawerState.Open;
     this.data.changeState(true);
+    this.routes = Navigations;
   }
 
   private registSvgIcon() {
+    Navigations.forEach(menuItem => {
+      this.iconRegistry.addSvgIcon(
+        menuItem.icon,
+        this.sanitizer.bypassSecurityTrustResourceUrl(menuItem.iconAsset));
+    });
     this.iconRegistry.addSvgIcon(
       'menu',
       this.sanitizer.bypassSecurityTrustResourceUrl('assets/icon-svg/menu.svg'));
+
   }
 
 }

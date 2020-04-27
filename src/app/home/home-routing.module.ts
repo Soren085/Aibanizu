@@ -1,12 +1,24 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home.component';
+import { ImpressionComponent } from './components/screens/impression/impression.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    children: [
+      {
+        path: 'impression',
+        component: ImpressionComponent
+      },
+      {
+        path: 'guitar',
+        loadChildren:  () => import('src/app/home/components/screens/guitar/guitar.module').then(m => m.GuitarModule),
+
+      },
+
+    ]
   },
 ];
 
