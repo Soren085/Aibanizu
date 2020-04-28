@@ -16,6 +16,7 @@ export const Navigations: Navigation[] = [
     route: 'impression',
     iconAsset: 'assets/icon-svg/impression.svg',
     icon: 'impression',
+    modelIcon: false,
     hasChild: false
   },
   {
@@ -23,27 +24,47 @@ export const Navigations: Navigation[] = [
     route: 'guitar',
     iconAsset: 'assets/icon-svg/electric-guitar.svg',
     icon: 'electric-guitar',
+    modelIcon: false,
     hasChild: true,
     children: [
       {
         title: 'Anatomy',
-        route: 'guitar/anatomy',
+        route: 'anatomy',
         iconAsset: 'assets/icon-svg/neuron.svg',
         icon: 'neuron',
+        modelIcon: false,
       },
       {
         title: 'Brands',
-        route: 'guitar/brands',
+        route: 'brands',
         iconAsset: 'assets/icon-svg/guitar-shop.svg',
         icon: 'guitar-shop',
+        modelIcon: false,
       },
       {
         title: 'Techniques',
-        route: 'guitar/techniques',
-        iconAsset: 'assets/icon-svg/neuron.svg',
-        icon: 'neuron',
+        route: 'techniques',
+        iconAsset: 'assets/icon-svg/guitar-tech.svg',
+        icon: 'guitar-tech',
+        modelIcon: false,
       },
     ]
+  },
+  {
+    title: 'Artists',
+    route: 'artists',
+    iconAsset: 'assets/icon-svg/freddie.svg',
+    icon: 'freddie',
+    modelIcon: true,
+    hasChild: false
+  },
+  {
+    title: 'Author',
+    route: 'author',
+    iconAsset: 'assets/icon-svg/author.svg',
+    icon: 'author',
+    modelIcon: true,
+    hasChild: false
   },
 
 ];

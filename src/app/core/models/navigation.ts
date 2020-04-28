@@ -5,4 +5,5 @@ export interface Navigation {
   icon?: string;
   hasChild?: boolean;
   children?: Navigation[];
+  modelIcon: boolean;
 }

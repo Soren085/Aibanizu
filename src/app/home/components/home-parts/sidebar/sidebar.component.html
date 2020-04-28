@@ -5,6 +5,10 @@
     </ng-content>
   </mat-drawer>
 
+  <!-- <mat-drawer [opened]="drawerInitialState" position="end" mode="side" #drawer [ngClass]="drawerState ? 'drawer-opened' : 'drawer-closed'">
+    <ng-content>
+    </ng-content>
+  </mat-drawer> -->
 
   <mat-drawer-content [ngClass]="drawerState ? 'content-opened' : 'content-closed'">
     <sidebar-content></sidebar-content>

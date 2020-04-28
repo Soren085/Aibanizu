@@ -31,6 +31,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.drawerInitialState = DrawerState.Open;
     this.data.changeState(DrawerState.Open);
     this.routes = Navigations;
+    this.appendChildRoute();
     this.drawerSubscription = this.data.currentState.subscribe(
       res => {
         this.iconChangeState(res);
@@ -72,6 +73,16 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.isDrawerOpened = drawerState;
       }, 300);
     }
+  }
+
+  private appendChildRoute() {
+    this.routes.forEach(routeItem => {
+      if (routeItem.hasChild) {
+        routeItem.children.forEach(child => {
+          child.route = routeItem.route + '/' + child.route;
+        });
+      }
+    });
   }
 
 }
