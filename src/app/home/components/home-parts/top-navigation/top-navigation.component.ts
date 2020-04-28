@@ -17,8 +17,16 @@ export class TopNavigationComponent implements OnInit {
     this.assets = Assets;
   }
 
-  public openState(e: boolean) {
+  public openState(e: boolean): void {
     this.isDrawerOpened = e;
+  }
+
+  public login(): void {
+    alert('does absolutely nothing!!!');
+  }
+
+  public changeLanguage(): void {
+    alert('does absolutely nothing!!!');
   }
 
 }

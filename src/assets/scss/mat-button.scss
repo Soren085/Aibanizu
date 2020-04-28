@@ -2,7 +2,16 @@ button.mat-button .mat-icon,
 a.mat-button .mat-icon,
 a.mat-raised-button .mat-icon,
 a.mat-flat-button .mat-icon,
-a.mat-stroked-button .mat-icon, .mat-fab {
+a.mat-stroked-button .mat-icon,
+.mat-mini-fab,
+.mat-fab {
   vertical-align: top !important;
   font-size: 1.25em;
+}
+
+.user-info {
+  .mat-mini-fab {
+    width: 30px;
+    height: 30px;
+  }
 }

@@ -64,4 +64,15 @@
     }
   }
 
+  .top-navigation {
+    .user-info {
+      button.login {
+        background: mat-color($primary, 300);
+        color: $primary-white;
+      }
+    }
+  }
+  
+  
+
 }
