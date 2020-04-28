@@ -5,5 +5,24 @@
 .home-container {
   height: 100%;
   box-sizing: border-box;
-
 }
+
+
+.navigation-title {
+  margin-left: 30px;
+  transition-property: opacity;
+  transition-duration: 0.1s;
+  transition-timing-function: linear;
+}
+
+.navigation-title.hide {
+  opacity: 0;
+}
+
+// .menu-item-active {
+//   TODO hover effect and active effect
+// }
+
+// .menu-child-item-active {
+//   TODO hover effect and active effect
+// }

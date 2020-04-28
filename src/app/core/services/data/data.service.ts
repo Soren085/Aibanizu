@@ -15,7 +15,6 @@ export class DataService {
   // change state method
   public changeState(state) {
     this.sidenavOpenState.next(state);
-    console.log(state);
   }
 
   public get currentState(): Observable<boolean> {

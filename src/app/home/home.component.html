@@ -1,32 +1,36 @@
 <div class="home-container" [ngClass]="class ? 'dark' : 'light'">
   <top-navigation [isDrawerOpened]="isDrawerOpened"></top-navigation>
 
-  <sidebar [drawerInitialState]="drawerInitialState" [isDrawerOpened]="isDrawerOpened">
+  <sidebar [drawerInitialState]="drawerInitialState">
     <mat-nav-list>
       <div class="navigation" *ngFor="let routeItem of routes">
-        <a *ngIf="!routeItem.hasChild; else expansion" mat-list-item class="text link" [routerLink]="routeItem.route">
-          <mat-icon class="icon14" [svgIcon]="routeItem.icon"></mat-icon>
-          {{ routeItem.title }}
+        <a *ngIf="!routeItem.hasChild; else expansion" mat-list-item class="text link" [routerLink]="routeItem.route" routerLinkActive="menu-item-active">
+          <mat-icon class="vertical-center" [ngClass]="{center: !isDrawerOpened}" [svgIcon]="routeItem.icon"></mat-icon>
+          <span class="navigation-title" [ngClass]="{hide: !isDrawerOpened}">{{ routeItem.title }}</span>
           <mat-divider></mat-divider>
-        </a>  
+        </a>
         
         <ng-template #expansion>
 
-          <mat-expansion-panel mat-list-item>
-            <mat-expansion-panel-header class="navigation-header" [routerLink]="routeItem.route">
+          <mat-expansion-panel mat-list-item [hideToggle]="!isDrawerOpened">
+
+            <mat-expansion-panel-header class="navigation-header">
               <mat-panel-title class="text">
-                <mat-icon class="icon14" [svgIcon]="routeItem.icon"></mat-icon>
-                {{ routeItem.title }}
+                <mat-icon class="vertical-center" [ngClass]="{center: !isDrawerOpened}" [svgIcon]="routeItem.icon"></mat-icon>
+                <span class="navigation-title" [ngClass]="{hide: !isDrawerOpened}">{{ routeItem.title }}</span>
               </mat-panel-title>
             </mat-expansion-panel-header>
+
             <mat-divider></mat-divider>
           
-            <div class="navigation" *ngFor="let child of routeItem.children; last as last">
-              <a mat-list-item class="text link" [routerLink]="child.route">
-                {{ child.title }}
+            <div class="child-navigation" *ngFor="let child of routeItem.children; last as last">
+              <a mat-list-item class="text link" [routerLink]="child.route" routerLinkActive="menu-child-item-active">
+                <mat-icon class="vertical-center" [ngClass]="{center: !isDrawerOpened}" [svgIcon]="child.icon"></mat-icon>
+                <span class="navigation-title" [ngClass]="{hide: !isDrawerOpened}">{{ child.title }}</span>
                 <mat-divider *ngIf="!last"></mat-divider>
               </a>
             </div>
+
           </mat-expansion-panel>
 
           <mat-divider></mat-divider>
@@ -35,6 +39,7 @@
 
       </div>
     </mat-nav-list>
-    
+
   </sidebar>
+
 </div>

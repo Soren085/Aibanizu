@@ -2,20 +2,24 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { GuitarComponent } from './guitar.component';
 import { AnatomyComponent } from './tabs/anatomy/anatomy.component';
-import { GuitarGenresComponent } from './tabs/guitar-genres/guitar-genres.component';
+import { GuitarBrandsComponent } from './tabs/guitar-brands/guitar-brands.component';
+import { TechniquesComponent } from './tabs/techniques/techniques.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: GuitarComponent,
     children: [
       {
         path: 'anatomy',
         component: AnatomyComponent
       },
       {
-        path: 'genres',
-        component: GuitarGenresComponent
+        path: 'brands',
+        component: GuitarBrandsComponent
+      },
+      {
+        path: 'techniques',
+        component: TechniquesComponent
       },
     ]
   }

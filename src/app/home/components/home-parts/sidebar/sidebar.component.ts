@@ -8,7 +8,6 @@ import { DrawerState } from 'src/app/core/constants/constants';
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit, OnDestroy {
-  @Input() isDrawerOpened: boolean;
   @Input() drawerInitialState;
   drawerSubscription: any;
   drawerState: boolean;
@@ -19,7 +18,6 @@ export class SidebarComponent implements OnInit, OnDestroy {
     this.drawerSubscription = this.data.currentState.subscribe(
       (res) => {
         this.drawerState = res;
-        console.log('RES: ', res);
       }
     );
   }

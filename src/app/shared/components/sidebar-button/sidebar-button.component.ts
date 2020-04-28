@@ -11,7 +11,10 @@ export class SidebarButtonComponent implements OnInit, OnDestroy {
   private subscription;
   private state: boolean;
 
-  constructor(private data: DataService) { }
+  constructor(
+    private data: DataService,
+    private cdr: ChangeDetectorRef
+    ) { }
 
   ngOnInit(): void {
     this.subscription = this.data.currentState.subscribe(
@@ -30,6 +33,7 @@ export class SidebarButtonComponent implements OnInit, OnDestroy {
     this.state = !this.state;
     this.data.changeState(this.state);
     this.openState.emit(this.state);
+    // this.cdr.detectChanges();
   }
 
 }

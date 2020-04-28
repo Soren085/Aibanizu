@@ -1,8 +1,25 @@
-.mat-icon.absolute {
+.vertical-center {
   position: absolute;
   top: 50%;
+  transform: translateY(-50%);
+}
+
+.horizontal-center {
+  position: absolute;
   left: 50%;
+  transform: translateX(-50%);
+}
+
+.center {
+  @extend .vertical-center;
+  @extend .horizontal-center;
   transform: translate(-50%, -50%);
+}
+
+.mat-icon.center {
+  transition-property: transform;
+  transition-duration: 0.2s;
+  transition-timing-function: linear;
 }
 
 .icon20 {
