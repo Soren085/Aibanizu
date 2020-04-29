@@ -6,13 +6,13 @@
 
   <img class="logo" [src]="assets.logo" alt="aibanizu" routerLink="">
 
-  <div class="user-info" fxLayout="row">
+  <div class="user-info" fxLayout="row" fxLayoutAlign="end center" fxLayoutGap="10px">
 
-    <button mat-mini-fab class="login" fxLayout="column" (click)="changeLanguage()">
+    <button mat-mini-fab class="login" fxFlex="30" (click)="changeLanguage()">
       <mat-icon class="center icon18 font18">language</mat-icon>
     </button>
 
-    <button mat-button class="login" fxLayout="column" (click)="login()">Login</button>
+    <button mat-button class="login" fxFlex="70" (click)="login()">Login</button>
 
   </div>
 

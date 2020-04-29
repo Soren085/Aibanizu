@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     this.drawerSubscription.unsubscribe();
   }
 
+  /** add all svg icons */
   private registSvgIcon(): void {
     Navigations.forEach(menuItem => {
       this.iconRegistry.addSvgIcon(
@@ -56,18 +57,17 @@ export class HomeComponent implements OnInit, OnDestroy {
         });
       }
     });
+
     this.iconRegistry.addSvgIcon(
       'menu',
       this.sanitizer.bypassSecurityTrustResourceUrl('assets/icon-svg/menu.svg'));
-    // this.iconRegistry.addSvgIcon(
-    //   'electric-guitar',
-    //   this.sanitizer.bypassSecurityTrustResourceUrl('assets/icon-svg/electric-guitar.svg'));
-
   }
 
   private iconChangeState(drawerState: boolean): void {
-    if (drawerState) {
-      this.isDrawerOpened = drawerState;
+    if (drawerState === DrawerState.Open) {
+      setTimeout(() => {
+        this.isDrawerOpened = drawerState;
+      }, 50);
     } else {
       setTimeout(() => {
         this.isDrawerOpened = drawerState;
