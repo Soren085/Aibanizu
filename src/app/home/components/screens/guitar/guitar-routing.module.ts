@@ -8,6 +8,7 @@ import { TechniquesComponent } from './tabs/techniques/techniques.component';
 const routes: Routes = [
   {
     path: '',
+    component: GuitarComponent,
     children: [
       {
         path: 'anatomy',

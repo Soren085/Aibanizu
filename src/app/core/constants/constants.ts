@@ -1,5 +1,6 @@
 import { DrawerStatus } from '../models/drawer-status';
 import { Navigation } from '../models/navigation';
+import { Playlist } from '../models/playlist';
 
 export class Assets {
   public static logo = 'assets/img/dark-theme-logo-yellow-no-bg-reverese.png';
@@ -65,6 +66,29 @@ export const Navigations: Navigation[] = [
     icon: 'author',
     modelIcon: true,
     hasChild: false
+  },
+];
+
+export const PlayLists: Playlist[] = [
+  {
+    url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
+    title: 'Hard Rock'
+  },
+  {
+    url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
+    title: 'Hard Rock'
+  },
+  {
+    url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
+    title: 'Hard Rock'
+  },
+  {
+    url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
+    title: 'Hard Rock'
+  },
+  {
+    url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
+    title: 'Hard Rock'
   },
 
 ];

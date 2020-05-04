@@ -10,6 +10,8 @@ import { GuitarComponent } from './components/screens/guitar/guitar.component';
 import { SidebarContentComponent } from './components/home-parts/sidebar-content/sidebar-content.component';
 import { ArtistsComponent } from './components/screens/artists/artists.component';
 import { AuthorComponent } from './components/screens/author/author.component';
+import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
+import { HomeArticlesComponent } from './components/screens/home-screen/parts/home-articles/home-articles.component';
 
 const Components = [
   HomeComponent,
@@ -20,6 +22,8 @@ const Components = [
   SidebarContentComponent,
   ArtistsComponent,
   AuthorComponent,
+  HomeScreenComponent,
+  HomeArticlesComponent
 ];
 
 @NgModule({

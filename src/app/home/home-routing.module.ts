@@ -4,6 +4,7 @@ import { HomeComponent } from './home.component';
 import { ImpressionComponent } from './components/screens/impression/impression.component';
 import { ArtistsComponent } from './components/screens/artists/artists.component';
 import { AuthorComponent } from './components/screens/author/author.component';
+import { HomeScreenComponent } from './components/screens/home-screen/home-screen.component';
 
 const routes: Routes = [
   {
@@ -26,7 +27,6 @@ const routes: Routes = [
         path: 'author',
         component: AuthorComponent
       },
-
 
     ]
   },

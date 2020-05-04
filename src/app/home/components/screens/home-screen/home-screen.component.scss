@@ -1,0 +1,32 @@
+.home-screen-container {
+  margin: 20px 0;
+
+  .player {
+    display: block;
+    width: 50%;
+    margin: auto;  
+  }
+
+  .player-utils {
+    margin-bottom: 10px;
+
+    .playlist {
+      label {
+        margin-right: 10px;
+      }
+    }
+  }
+
+  iframe {
+    height: 80px;
+    transition-property: height;
+    transition-duration: 0.3s;
+    transition-timing-function: linear;
+  }
+  
+}
+
+
+.expanded {
+  height: 380px !important;
+}
