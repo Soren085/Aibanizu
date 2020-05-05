@@ -3,9 +3,14 @@
 @import './assets/scss/mat-icon.scss';
 @import './assets/scss/mat-expansion.scss';
 @import './assets/scss/mat-menu.scss';
+@import './assets/scss/main.scss';
 
 
 
 html, body { height: 100vh; box-sizing: border-box; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  overflow: hidden;
+}
 

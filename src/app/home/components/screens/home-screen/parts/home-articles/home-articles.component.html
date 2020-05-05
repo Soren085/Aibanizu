@@ -1,1 +1,21 @@
-<p>home-articles works!</p>
+<div class="home-articles-container title-separator" fxLayout="row">
+  <div class="article" fxFlex="70" >
+    <div class="title">
+      <main-title [matIcon]="'assignment'" [title]="'Articles'"></main-title>
+    </div>
+
+    <div *ngFor="let article of listArticle" class="list-article" fxLayout="row">
+      <img [src]="article.image" alt="article">
+      <div class="text" fxLayout="column">
+        <a>{{ article.title }}</a>
+        <span class="date">{{ article.date }}</span>
+        <span class="description">{{ article.description }}</span>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="features" fxFlex="30">
+    <article-features></article-features>
+  </div>
+</div>

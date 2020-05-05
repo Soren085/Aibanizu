@@ -4,11 +4,12 @@ import { MaterialModule } from './modules/material.module';
 import { SidebarButtonComponent } from './components/sidebar-button/sidebar-button.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FormsModule } from '@angular/forms';
+import { MainTitleComponent } from './components/main-title/main-title.component';
 
 
 
 @NgModule({
-  declarations: [SidebarButtonComponent],
+  declarations: [SidebarButtonComponent, MainTitleComponent],
   imports: [
     CommonModule,
     MaterialModule,
@@ -19,8 +20,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     SidebarButtonComponent,
     FlexLayoutModule,
-    FormsModule
-
+    FormsModule,
+    MainTitleComponent
   ]
 })
 export class SharedModule { }

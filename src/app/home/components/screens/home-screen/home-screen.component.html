@@ -1,15 +1,6 @@
 <div class="home-screen-container">
-  <div class="player player-utils" fxLayout="row" fxLayoutAlign="space-between center">
-    <label>{{playlist.title}}</label>
-    <div class="playlist">
-      <label>Playlist</label>
-      <mat-slide-toggle class="example-margin" [color]="'accent'" [checked]="isListExpanded" (change)="togglePlaylist($event)">
-      </mat-slide-toggle>
+  <app-home-player></app-home-player>
 
-    </div>
-  </div>
-
-  <iframe [src]="playlist.url" class="player" frameborder="0" [ngClass]="{expanded: isListExpanded}"
-    allowtransparency="true" allow="encrypted-media"></iframe>
+  <app-home-articles></app-home-articles>
 </div>
 
