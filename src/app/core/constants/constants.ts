@@ -52,8 +52,8 @@ export const Navigations: Navigation[] = [
     ]
   },
   {
-    title: 'Artists',
-    route: 'artists',
+    title: 'Musicians',
+    route: 'musicians',
     iconAsset: 'assets/icon-svg/freddie.svg',
     icon: 'freddie',
     modelIcon: true,
