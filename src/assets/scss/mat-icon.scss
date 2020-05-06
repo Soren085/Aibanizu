@@ -48,6 +48,17 @@
   height: 30px !important;
 }
 
+.icon60 {
+  width: 60px !important;
+  height: 60px !important;
+}
+
+.icon90 {
+  width: 90px !important;
+  height: 90px !important;
+}
+
+
 .iconHeight36 {
   height: 36px !important;
 }
@@ -58,4 +69,11 @@
 
 .font30 {
   font-size: 30px !important;
+}
+
+.material-icons {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
 }

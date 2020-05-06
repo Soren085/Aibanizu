@@ -1,1 +1,20 @@
-<p>article-features works!</p>
+<div class="article-features-container">
+  <div class="article">
+    <div class="title">
+      <label>
+        <mat-icon >assignment</mat-icon>
+        <span>Features</span>
+      </label>
+    </div>
+
+    <a *ngFor="let article of listArticle" class="list-article" fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px"  routerLink="details">
+      <div class="text" fxLayout="column" fxLayoutAlign="center start" fxLayoutGap="10px" fxFlex="65">
+        <label>{{ article.title }}</label>
+        <span class="date">{{ article.date }}</span>
+      </div>
+      <img [src]="article.image" alt="article" fxFlex="35" class="icon90">
+
+    </a>
+
+  </div>
+</div>

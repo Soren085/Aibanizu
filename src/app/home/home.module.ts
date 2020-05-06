@@ -16,6 +16,7 @@ import { HomePlayerComponent } from './components/screens/home-screen/parts/home
 import {
   ArticleFeaturesComponent
 } from './components/screens/home-screen/parts/home-articles/parts/article-features/article-features.component';
+import { ArticleDetailComponent } from './components/screens/details/article-detail/article-detail.component';
 
 const Components = [
   HomeComponent,
@@ -29,7 +30,8 @@ const Components = [
   HomeScreenComponent,
   HomeArticlesComponent,
   HomePlayerComponent,
-  ArticleFeaturesComponent
+  ArticleFeaturesComponent,
+  ArticleDetailComponent
 ];
 
 @NgModule({
