@@ -14,14 +14,14 @@ import { MainTitleComponent } from './components/main-title/main-title.component
     CommonModule,
     MaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
   ],
   exports: [
     MaterialModule,
     SidebarButtonComponent,
     FlexLayoutModule,
     FormsModule,
-    MainTitleComponent
+    MainTitleComponent,
   ]
 })
 export class SharedModule { }

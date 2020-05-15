@@ -1,0 +1,28 @@
+.slideshow {
+
+  .image-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    max-width: 992px;
+    background: rgb(2,0,36);
+    background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(136,136,149,1) 35%, rgba(234,249,252,1) 100%);
+    z-index: 2;
+
+
+    img {
+      height: 558px;
+      object-fit: contain;
+      position: relative;
+      left: 0;
+      width: 992px;
+      display: block;
+      z-index: 1;
+    }
+
+    .transition {
+      transition: left .3s ease-in-out;
+    }
+  
+  }
+}

@@ -1,6 +1,7 @@
 import { DrawerStatus } from '../models/drawer-status';
 import { Navigation } from '../models/navigation';
 import { Playlist } from '../models/playlist';
+import { Musician } from '../models/musician';
 
 export class Assets {
   public static logo = 'assets/img/dark-theme-logo-yellow-no-bg-reverese.png';
@@ -89,6 +90,22 @@ export const PlayLists: Playlist[] = [
   {
     url: 'https://open.spotify.com/embed/playlist/3CcarFlp60sHD4W3OraScH',
     title: 'Hard Rock'
+  },
+
+];
+
+export const Musicians: Musician[] = [
+  {
+    name: 'Vai',
+    image: 'assets/img/steve-vai.jpg'
+  },
+  {
+    name: 'Joe Sat',
+    image: 'assets/img/joe-sat.jpg'
+  },
+  {
+    name: 'Dio',
+    image: 'assets/img/dio.jpg'
   },
 
 ];
