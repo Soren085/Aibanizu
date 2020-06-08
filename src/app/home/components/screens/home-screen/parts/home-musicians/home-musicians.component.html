@@ -5,8 +5,10 @@
 
   <div class="slideshow">
     <div class="image-wrapper">
-      <div class="image" *ngFor="let musician of listMusician; index as i" (mousedown)="swipeHold($event)" (mouseup)="swipeRelease($event)">
-        <img [style.left]="transform()" (transitionend)="i === 0 ? refreshPosition() : ''" [ngClass]="isTransitionAllowed ? 'transition' : ''" [src]="musician.image" draggable="false">
+      <div class="image" *ngFor="let musician of listMusician; index as i" (mousedown)="swipeRelease($event)"
+        (mousemove)="swipeAction($event)" (mouseup)="swipeRelease($event)">
+        <img [style.left]="transformValue + '%'" (transitionend)="refreshPosition(i)"
+          [ngClass]="isTransitionAllowed ? 'transition' : ''" [src]="musician.image" draggable="false">
       </div>
     </div>
     <button (click)="prev()">prev</button>
