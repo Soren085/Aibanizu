@@ -14,6 +14,10 @@ export class HomeMusiciansComponent implements OnInit, AfterViewChecked {
   isTransitionAllowed: boolean;
   isDragging: boolean;
   transformValue: string;
+  // first drag position
+  posX1: number;
+  // next drag position
+  posX2: number;
 
   @ViewChildren('sliderImage') sliderImage: QueryList<ElementRef>;
 
@@ -89,10 +93,12 @@ export class HomeMusiciansComponent implements OnInit, AfterViewChecked {
   }
 
   public swipeAction(e): void {
-    // console.log(this.sliderImage);
-    // this.sliderImage.toArray().forEach(imageElement => {
-    //   imageElement.nativeElement.style.left
-    // });
+    this.posX2 = this.posX1 ? this.posX1 - e.clientX : e.clientX;
+    this.posX1 = e.clientX;
+    this.sliderImage.toArray().forEach(imageElement => {
+      const leftPosition = imageElement.nativeElement.style.left.replace('px', '');
+      imageElement.nativeElement.style.left = `${Number(leftPosition) - this.posX2}px`;
+    });
     if (this.isDragging) {
       console.log(e, typeof e);
     }
