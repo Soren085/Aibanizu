@@ -7,7 +7,7 @@
     <div class="image-wrapper">
       <div class="image" *ngFor="let musician of listMusician; index as i" (mousedown)="swipeRelease($event)"
         (mousemove)="swipeAction($event)" (mouseup)="swipeRelease($event)">
-        <img [style.left]="transformValue + '%'" (transitionend)="refreshPosition(i)"
+        <img #sliderImage (transitionend)="refreshPosition(i)"
           [ngClass]="isTransitionAllowed ? 'transition' : ''" [src]="musician.image" draggable="false">
       </div>
     </div>

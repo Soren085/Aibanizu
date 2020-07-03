@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, AfterViewInit, AfterViewChecked } from '@angular/core';
 import { Musician } from 'src/app/core/models/musician';
 import { Musicians } from 'src/app/core/constants/constants';
 
@@ -7,13 +7,15 @@ import { Musicians } from 'src/app/core/constants/constants';
   templateUrl: './home-musicians.component.html',
   styleUrls: ['./home-musicians.component.scss']
 })
-export class HomeMusiciansComponent implements OnInit {
+export class HomeMusiciansComponent implements OnInit, AfterViewChecked {
   listMusician: Musician[];
   currentIndex: number = 0;
   mouseHoldPosition: number;
   isTransitionAllowed: boolean;
   isDragging: boolean;
   transformValue: string;
+
+  @ViewChildren('sliderImage') sliderImage: QueryList<ElementRef>;
 
   constructor() { }
 
@@ -26,6 +28,9 @@ export class HomeMusiciansComponent implements OnInit {
     this.listMusician.push(this.listMusician[0]);
     this.listMusician.unshift(newItem);
     this.currentIndex = 1;
+  }
+
+  ngAfterViewChecked() {
     this.transform();
   }
 
@@ -46,7 +51,10 @@ export class HomeMusiciansComponent implements OnInit {
   }
 
   private transform(value?: string) {
-    this.transformValue = `-${this.currentIndex * 100}`;
+    this.sliderImage.toArray().forEach((imageElement, i) => {
+      imageElement.nativeElement.style.left = `-${this.currentIndex * 992}px`;
+    });
+
   }
 
   public refreshPosition(index: number): void {
@@ -55,6 +63,7 @@ export class HomeMusiciansComponent implements OnInit {
     }
     if (this.currentIndex === 0) {
       this.isTransitionAllowed = false;
+      // TODO check length
       this.currentIndex = this.listMusician.length - 2;
     } else if (this.currentIndex === this.listMusician.length - 1) {
       this.isTransitionAllowed = false;
@@ -65,7 +74,25 @@ export class HomeMusiciansComponent implements OnInit {
     this.transform();
   }
 
+  public swipeHold(e): void {
+    this.isDragging = true;
+    console.log(e, typeof e);
+    // e = e || window.event;
+    // e.preventDefault();
+    // posInitial = items.offsetLeft;
+
+    // if (e.type === 'touchstart') {
+    //   posX1 = e.touches[0].clientX;
+    // } else {
+    //   posX1 = e.clientX;
+    // }
+  }
+
   public swipeAction(e): void {
+    // console.log(this.sliderImage);
+    // this.sliderImage.toArray().forEach(imageElement => {
+    //   imageElement.nativeElement.style.left
+    // });
     if (this.isDragging) {
       console.log(e, typeof e);
     }
